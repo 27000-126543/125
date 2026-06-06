@@ -437,3 +437,8 @@ export const useStore = create<StoreState>((set, get) => ({
     }
   },
 }));
+
+// 调试用：暴露store到window对象
+if (typeof window !== 'undefined') {
+  (window as any).useStore = useStore;
+}
